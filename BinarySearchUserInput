@@ -1,0 +1,32 @@
+def binary_search(arr, target):
+    low = 0
+    high = len(arr) - 1
+
+    while low <= high:
+        mid = (low + high) // 2
+
+        if arr[mid] == target:
+            return mid
+        elif arr[mid] < target:
+            low = mid + 1
+        else:
+            high = mid - 1
+
+    return -1  # Target not found
+
+# --- Main Program ---
+# Get sorted list from user
+user_input = input("Enter sorted numbers separated by spaces: ")
+arr = list(map(int, user_input.split()))
+
+# Get the element to search
+target = int(input("Enter the number to search: "))
+
+# Call the binary search function
+result = binary_search(arr, target)
+
+# Display the result
+if result != -1:
+    print(f"Element found at index {result}")
+else:
+    print("Element not found in the list.")
