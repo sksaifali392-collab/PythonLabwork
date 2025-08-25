@@ -1,0 +1,17 @@
+import string
+
+def dictionary():
+
+  a = input("Enter text to build a dictionary from: ")
+  cleaned_text = a.translate(str.maketrans('', '', string.punctuation)).lower()
+  words = cleaned_text.split()
+  word_dict = {}
+  for word in words:
+    if word in word_dict:
+      word_dict[word] += 1
+    else:
+      word_dict[word] = 1
+  return word_dict
+
+my_dictionary = dictionary()
+print(my_dictionary)
