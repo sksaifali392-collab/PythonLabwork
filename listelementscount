@@ -1,0 +1,8 @@
+my_lt=[]
+for i in range(6):
+    num=int(input("Enter elements:"))
+    my_lt.append(num)
+    sum=0
+    for i in my_lt:
+        sum=sum+i
+        print(sum)
